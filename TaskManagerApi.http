@@ -1,0 +1,71 @@
+@TaskManagerApi_HostAddress = http://localhost:5001
+
+### ============ USERS ============
+
+### Get all users
+GET {{TaskManagerApi_HostAddress}}/api/users
+Accept: application/json
+
+###
+
+### Create a new user
+POST {{TaskManagerApi_HostAddress}}/api/users
+Content-Type: application/json
+
+{
+  "username": "ahmed123",
+  "email": "ahmed@example.com",
+  "passwordHash": "temporary123"
+}
+
+###
+
+### Get a single user by id
+GET {{TaskManagerApi_HostAddress}}/api/users/1
+Accept: application/json
+
+###
+
+### ============ TASKS ============
+
+### Get all tasks
+GET {{TaskManagerApi_HostAddress}}/api/tasks
+Accept: application/json
+
+###
+
+### Create a new task
+POST {{TaskManagerApi_HostAddress}}/api/tasks
+Content-Type: application/json
+
+{
+  "title": "تعلم ASP.NET Core",
+  "description": "إنهاء مشروع Task Manager API",
+  "isCompleted": false,
+  "userId": 1
+}
+
+###
+
+### Get a single task by id
+GET {{TaskManagerApi_HostAddress}}/api/tasks/1
+Accept: application/json
+
+###
+
+### Update a task
+PUT {{TaskManagerApi_HostAddress}}/api/tasks/2
+Content-Type: application/json
+
+{
+  "id": 2,
+  "title": "تعلم ASP.NET Core - محدث",
+  "description": "إنهاء مشروع Task Manager API",
+  "isCompleted": true,
+  "userId": 1
+}
+
+###
+
+### Delete a task
+DELETE {{TaskManagerApi_HostAddress}}/api/tasks/2
