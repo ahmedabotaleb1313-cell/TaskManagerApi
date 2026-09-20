@@ -69,3 +69,33 @@ Content-Type: application/json
 
 ### Delete a task
 DELETE {{TaskManagerApi_HostAddress}}/api/tasks/2
+
+### ============ AUTH ============
+
+### Register a new user
+POST {{TaskManagerApi_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "sara_dev",
+  "email": "sara@example.com",
+  "password": "MyPassword123"
+}
+
+###
+
+### Login
+POST {{TaskManagerApi_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "sara@example.com",
+  "password": "MyPassword123"
+}
+
+###
+
+### Get all tasks (with authentication)
+GET {{TaskManagerApi_HostAddress}}/api/tasks
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoic2FyYV9kZXYiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJzYXJhQGV4YW1wbGUuY29tIiwiZXhwIjoxNzkwNTE1MzkwLCJpc3MiOiJUYXNrTWFuYWdlckFwaSIsImF1ZCI6IlRhc2tNYW5hZ2VyQXBpVXNlcnMifQ.9-hGUNnuddqNYipA5cK_kW4ePHMfoQCginqCzsLbP4E
